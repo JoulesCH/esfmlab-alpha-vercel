@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="6672" height="1293" viewBox="0 0 6672 1293">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        stroke: #d97706;
+        stroke-linejoin: round;
+      }
+
+      .cls-1 {
+        stroke-width: 10px;
+        filter: url(#filter);
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        stroke: #000;
+        stroke-width: 1px;
+      }
+
+      .cls-3 {
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        font-size: 429.167px;
+        font-family: "Minion Variable Concept";
+      }
+
+      .cls-5 {
+        fill: #d97706;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#d97706"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g style="fill: ; filter: url(#filter)">
+    <g id="Grupo_1" data-name="Grupo 1" class="cls-1" style="stroke: inherit; filter: none; fill: inherit">
+      <path id="Elipse_1" data-name="Elipse 1" class="cls-2" d="M528.058,43.613c276.684-73.8,560.8,90.678,634.6,367.362s-90.68,560.8-367.362,634.6S234.493,954.9,160.7,678.214,251.374,117.409,528.058,43.613Z"/>
+      <path id="Elipse_1_copia_3" data-name="Elipse 1 copia 3" class="cls-2" d="M400.782,249.363c276.684-73.8,560.805,90.677,634.6,367.361s-90.674,560.806-367.358,634.6-560.805-90.67-634.6-367.356S124.1,323.159,400.782,249.363Z"/>
+      <path id="Elipse_1_copia_4" data-name="Elipse 1 copia 4" class="cls-2" d="M742.825,158.134c276.685-73.8,560.805,90.678,634.605,367.362s-90.68,560.8-367.37,634.6-560.8-90.68-634.6-367.365S466.141,231.931,742.825,158.134Z"/>
+      <path id="Elipse_1_copia_5" data-name="Elipse 1 copia 5" class="cls-3" d="M562.849,174.054c276.684-73.8,560.8,90.677,634.6,367.361s-90.68,560.805-367.362,634.605-560.8-90.68-634.6-367.366S286.165,247.85,562.849,174.054Z"/>
+    </g>
+  </g>
+  <use xlink:href="#Grupo_1" style="stroke: #d97706; filter: none; fill: none"/>
+  <text id="ESFMlab" class="cls-4" transform="translate(1563.456 958.591) scale(1.952)">ESFM<tspan class="cls-5">lab</tspan></text>
+</svg>
