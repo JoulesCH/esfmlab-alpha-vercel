@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-@media screen and (min-width: 1300px)  {
+/* @media screen and (min-width: 1300px)  {
   
   .landing-div { 
     background-image: url(/back1.png) , url(/back2.png), url(/back3.png);
@@ -38,7 +38,7 @@
 
     
   }
-}
+} */
 
 .MathJax > svg{
   display:inline;

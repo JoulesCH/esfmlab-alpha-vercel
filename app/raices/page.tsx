@@ -12,6 +12,7 @@ import { useRouter, useSearchParams   } from 'next/navigation';
 import {Accordion} from 'flowbite-react';
 
 import functionPlot from 'function-plot';
+import MainInput from '../../components/MainInput';
 
 
 
@@ -94,8 +95,8 @@ export default function Raices(){
                     <button className="inline-block p-4 w-full bg-white rounded-r-lg hover:text-gray-700 hover:bg-gray-50 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700">Regla Falsa</button>
                 </li>
             </ul>
-
-                <EditableMathField
+                <MainInput latex={latex} inputSetLatex={inputSetLatex}  enter={resolveBisection} edit={inputSetLatex}></MainInput>
+                {/* <EditableMathField
                     latex={latex}
                     onChange={inputSetLatex}
                     id="raices-main-input"
@@ -120,7 +121,7 @@ export default function Raices(){
                     <p className="text-amber-600 text-right pb-5" >
                         Presiona enter <ArrowLeftOnRectangleIcon className="h-6 w-6 inline"/>   para calcular
                     </p>
-                </div>
+                </div> */}
                 
                 
                 <div className="text-center" style={{display: loading? 'block':'none'}}>
