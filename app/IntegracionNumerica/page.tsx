@@ -12,14 +12,14 @@ import MainInput from '../../components/MainInput';
 import Steps from '../../components/Steps';
 import { euler } from '../../src/integracionNumerica/index';
 
-import { addStyles } from 'react-mathquill';
-
-
-
-
 export default function(){
 
-    addStyles();
+    useEffect(() => {
+        import("react-mathquill").then((mq) => {
+        mq.addStyles();
+        });
+    }, []);
+
     
     const router = useRouter()
     const searchParams = useSearchParams();
