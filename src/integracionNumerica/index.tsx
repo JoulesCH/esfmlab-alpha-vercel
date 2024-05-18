@@ -1,5 +1,8 @@
 "use client"
-// import { MathComponent } from "mathjax-react";
+
+import dynamic from 'next/dynamic';
+
+const MathComponent = dynamic(() => import('../../components/Math'), { ssr: false });
 
 interface result{
     steps?: {
@@ -39,8 +42,8 @@ export function euler(a:GLfloat, b:GLfloat, f_a:GLfloat,  h:GLfloat,  func:Funct
             const f_b = 0;
             return {
                 error: <p> La función ingresada no tiene una raiz en 
-                    {/* <MathComponent tex={ `[${a}, ${b} ]` } display={false}/>, ya que 
-                <MathComponent tex={ `f(${a})=${f_a}` } display={false}/> y <MathComponent tex={ ` f(${b}) = ${f_b} ` } display={false}/>  */}
+                    <MathComponent children={ `[${a}, ${b} ]` } />, ya que 
+                <MathComponent children={ `f(${a})=${f_a}` } /> y <MathComponent children={ ` f(${b}) = ${f_b} ` } /> 
                 </p> 
             };
         }
@@ -65,10 +68,9 @@ export function euler(a:GLfloat, b:GLfloat, f_a:GLfloat,  h:GLfloat,  func:Funct
                 titulo: `Iteración ${iteraciones}`,
                 descripcion: <div>
                         <p>  Realizamos la iteración 
-                            {/* <MathComponent tex={ `y_${iteraciones} = y_${iteraciones-1} + h \\cdot f(x_${iteraciones-1}, y_${iteraciones-1}) \\ = \\ ${y_n}` } display={false}/> </p>
+                            <MathComponent children={ `y_${iteraciones} = y_${iteraciones-1} + h \\cdot f(x_${iteraciones-1}, y_${iteraciones-1}) \\ = \\ ${y_n}` } /> </p>
                         
-                        <p>  Obtenemos <MathComponent tex={ `x_${iteraciones} = x_${iteraciones-1} + n \\cdot h \\ = \\ ${x_n}` } display={false}/> </p> */}
-                        </p> 
+                        <p>  Obtenemos <MathComponent children={ `x_${iteraciones} = x_${iteraciones-1} + n \\cdot h \\ = \\ ${x_n}` } /> </p>
                     </div>,
                 resultado: <p> No hay resultado</p>,
             });

@@ -1,8 +1,13 @@
 "use client";
 // import { EditableMathField } from 'react-mathquill';
+import dynamic from "next/dynamic";
 import {
     ArrowLeftOnRectangleIcon
 } from '@heroicons/react/24/outline';
+
+const EditableMathField = dynamic(() => import("./editableMath"), {
+    ssr: false
+  })
 
 interface InputProps {
     latex: string;
@@ -16,24 +21,12 @@ export default function MainInput(props: InputProps){
     
     return (
         <>
-        {/* <EditableMathField
+        <EditableMathField
                     latex={latex}
                     onChange={inputSetLatex}
                     id="raices-main-input"
-                    placeholder="Escribe tu ecuación"
-                    mathquillDidMount={(mathField) => {
-                        mathField.focus()   
-                        mathField.config(
-                                {
-                                    handlers: {
-                                        enter: enter,
-                                        edit: edit
-
-                                    }
-                                }
-                            
-                        )
-                    }}
+                    enter = {enter}
+                    edit = {edit}
                     
 
                 />
@@ -41,7 +34,7 @@ export default function MainInput(props: InputProps){
                     <p className="text-amber-600 text-right pb-5" >
                         Presiona enter <ArrowLeftOnRectangleIcon className="h-6 w-6 inline"/>   para calcular
                     </p>
-                </div> */}
+                </div>
         </>
     )
 }

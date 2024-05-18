@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from 'react'
-// import { addStyles } from 'react-mathquill'
 import './Raices.Component.css'
 
 import MathExpression from 'math-expressions';
@@ -14,10 +13,12 @@ import MainInput from '../../components/MainInput';
 import Steps from '../../components/Steps';
 
 
+import {Styles} from '../../src/addStyles';
+
+Styles()();
 
 
 export default function Raices(){
-    // addStyles();  // mathquill styles
     const router = useRouter()
     const searchParams = useSearchParams();
     const eq = searchParams.get('eq') || '';
