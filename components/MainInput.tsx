@@ -1,4 +1,5 @@
-import { EditableMathField } from 'react-mathquill';
+"use client";
+// import { EditableMathField } from 'react-mathquill';
 import {
     ArrowLeftOnRectangleIcon
 } from '@heroicons/react/24/outline';
@@ -15,7 +16,7 @@ export default function MainInput(props: InputProps){
     
     return (
         <>
-        <EditableMathField
+        {/* <EditableMathField
                     latex={latex}
                     onChange={inputSetLatex}
                     id="raices-main-input"
@@ -40,7 +41,7 @@ export default function MainInput(props: InputProps){
                     <p className="text-amber-600 text-right pb-5" >
                         Presiona enter <ArrowLeftOnRectangleIcon className="h-6 w-6 inline"/>   para calcular
                     </p>
-                </div>
+                </div> */}
         </>
     )
 }

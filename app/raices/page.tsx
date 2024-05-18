@@ -15,9 +15,9 @@ import Steps from '../../components/Steps';
 
 
 
-addStyles();  // mathquill styles
 
 export default function Raices(){
+    addStyles();  // mathquill styles
     const router = useRouter()
     const searchParams = useSearchParams();
     const eq = searchParams.get('eq') || '';

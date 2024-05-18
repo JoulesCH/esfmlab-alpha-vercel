@@ -1,3 +1,4 @@
+"use client";
 export default function Footer(){
     return (
         <footer className="text-center relative h-1" style={{bottom: "38px"}}>
