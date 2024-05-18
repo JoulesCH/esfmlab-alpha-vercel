@@ -1,5 +1,6 @@
+"use client";
 import { addStyles } from 'react-mathquill'
 
-export function Styles(){
+export default function Styles(){
     return addStyles;
 }

@@ -13,12 +13,12 @@ import MainInput from '../../components/MainInput';
 import Steps from '../../components/Steps';
 
 
-import {Styles} from '../../src/addStyles';
-
-Styles()();
+import { addStyles } from 'react-mathquill';
 
 
 export default function Raices(){
+    addStyles();
+
     const router = useRouter()
     const searchParams = useSearchParams();
     const eq = searchParams.get('eq') || '';

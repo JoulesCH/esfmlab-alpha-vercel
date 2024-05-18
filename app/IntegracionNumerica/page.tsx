@@ -10,13 +10,16 @@ import { Accordion } from 'flowbite-react';
 import functionPlot from 'function-plot';
 import MainInput from '../../components/MainInput';
 import Steps from '../../components/Steps';
-import { euler } from '../../src/integracionNumerica/index'
+import { euler } from '../../src/integracionNumerica/index';
 
-import {Styles} from '../../src/addStyles';
+import { addStyles } from 'react-mathquill';
 
-Styles()();
+
+
 
 export default function(){
+
+    addStyles();
     
     const router = useRouter()
     const searchParams = useSearchParams();
