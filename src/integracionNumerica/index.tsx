@@ -1,5 +1,5 @@
 "use client"
-import { MathComponent } from "mathjax-react";
+// import { MathComponent } from "mathjax-react";
 
 interface result{
     steps?: {
@@ -38,8 +38,10 @@ export function euler(a:GLfloat, b:GLfloat, f_a:GLfloat,  h:GLfloat,  func:Funct
         if(h==0 ){ // TODO
             const f_b = 0;
             return {
-                error: <p> La función ingresada no tiene una raiz en <MathComponent tex={ `[${a}, ${b} ]` } display={false}/>, ya que 
-                <MathComponent tex={ `f(${a})=${f_a}` } display={false}/> y <MathComponent tex={ ` f(${b}) = ${f_b} ` } display={false}/> </p> 
+                error: <p> La función ingresada no tiene una raiz en 
+                    {/* <MathComponent tex={ `[${a}, ${b} ]` } display={false}/>, ya que 
+                <MathComponent tex={ `f(${a})=${f_a}` } display={false}/> y <MathComponent tex={ ` f(${b}) = ${f_b} ` } display={false}/>  */}
+                </p> 
             };
         }
         const result = {
@@ -62,9 +64,11 @@ export function euler(a:GLfloat, b:GLfloat, f_a:GLfloat,  h:GLfloat,  func:Funct
             result.steps.push({
                 titulo: `Iteración ${iteraciones}`,
                 descripcion: <div>
-                        <p>  Realizamos la iteración <MathComponent tex={ `y_${iteraciones} = y_${iteraciones-1} + h \\cdot f(x_${iteraciones-1}, y_${iteraciones-1}) \\ = \\ ${y_n}` } display={false}/> </p>
+                        <p>  Realizamos la iteración 
+                            {/* <MathComponent tex={ `y_${iteraciones} = y_${iteraciones-1} + h \\cdot f(x_${iteraciones-1}, y_${iteraciones-1}) \\ = \\ ${y_n}` } display={false}/> </p>
                         
-                        <p>  Obtenemos <MathComponent tex={ `x_${iteraciones} = x_${iteraciones-1} + n \\cdot h \\ = \\ ${x_n}` } display={false}/> </p>
+                        <p>  Obtenemos <MathComponent tex={ `x_${iteraciones} = x_${iteraciones-1} + n \\cdot h \\ = \\ ${x_n}` } display={false}/> </p> */}
+                        </p> 
                     </div>,
                 resultado: <p> No hay resultado</p>,
             });

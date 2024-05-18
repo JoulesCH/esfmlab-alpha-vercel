@@ -1,5 +1,5 @@
 "use client"
-import { MathComponent } from "mathjax-react";
+// import { MathComponent } from "mathjax-react";
 
 
 
@@ -38,8 +38,10 @@ export function bisection(a:GLfloat, b:GLfloat, func:Function, EPSILON:GLfloat, 
         if (f_a * f_b >= 0)
         {
             return {
-                error: <p> La función ingresada no tiene una raiz en <MathComponent tex={ `[${a}, ${b} ]` } display={false}/>, ya que 
-                <MathComponent tex={ `f(${a})=${f_a}` } display={false}/> y <MathComponent tex={ ` f(${b}) = ${f_b} ` } display={false}/> </p> 
+                error: <p> La función ingresada no tiene una raiz en 
+                    {/* <MathComponent tex={ `[${a}, ${b} ]` } display={false}/>, ya que 
+                <MathComponent tex={ `f(${a})=${f_a}` } display={false}/> y <MathComponent tex={ ` f(${b}) = ${f_b} ` } display={false}/> </p>  */}
+                </p> 
             };
         }
 
@@ -59,8 +61,10 @@ export function bisection(a:GLfloat, b:GLfloat, func:Function, EPSILON:GLfloat, 
             
             result.steps.push({
                 titulo: `Iteración ${i}`,
-                descripcion: <p> Se calcula el punto medio <MathComponent tex={ `c = \\frac{${a}+${b}}{2} = ${c}` } display={false}/> </p>,
-                resultado: <p> Se calcula <MathComponent tex={ `f(${c}) = ${func(c)}` } display={false}/> </p>,
+                descripcion: <p> Se calcula el punto medio 
+                    {/* <MathComponent tex={ `c = \\frac{${a}+${b}}{2} = ${c}` } display={false}/> </p>,
+                resultado: <p> Se calcula <MathComponent tex={ `f(${c}) = ${func(c)}` } display={false}/> </p>, */}
+                </p> 
             });
             // Check if middle point is root
             if (func(c) == 0.0)
@@ -86,10 +90,11 @@ export function bisection(a:GLfloat, b:GLfloat, func:Function, EPSILON:GLfloat, 
                 {
                     titulo: 'Resumen',
                     descripcion: <>
-                            La ecuación ingresada tiene una raiz en <MathComponent tex={ `[${a_0}, ${b_0} ]` } display={false}/>, ya que <MathComponent tex={ `f(${a_0})=${f_a}` } display={false}/>; <MathComponent tex={ ` f(${b_0}) = ${f_b} ` } display={false}/> y
+                            La ecuación ingresada tiene una raiz en 
+                            {/* <MathComponent tex={ `[${a_0}, ${b_0} ]` } display={false}/>, ya que <MathComponent tex={ `f(${a_0})=${f_a}` } display={false}/>; <MathComponent tex={ ` f(${b_0}) = ${f_b} ` } display={false}/> y
                             existe cambio de signo. 
                             <div id='graph' className="w-full flex justify-center "></div>
-                            En {i} iteraciones del algoritmo de bisección con una tolerancia de <MathComponent tex={ `\\epsilon = ${EPSILON}` } display={false}/> se obtuvo la raiz <MathComponent tex={ `x = ${c}` } display={false}/>.
+                            En {i} iteraciones del algoritmo de bisección con una tolerancia de <MathComponent tex={ `\\epsilon = ${EPSILON}` } display={false}/> se obtuvo la raiz <MathComponent tex={ `x = ${c}` } display={false}/>. */}
                         </>,
                     resultado: <></>,
                 }
