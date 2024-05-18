@@ -1,10 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react'
-import { addStyles, EditableMathField } from 'react-mathquill'
+import { addStyles } from 'react-mathquill'
 import './Raices.Component.css'
-import {
-    ArrowLeftOnRectangleIcon
-} from '@heroicons/react/24/outline'
+
 import MathExpression from 'math-expressions';
 import { evaluate } from 'mathjs';
 import {bisection} from '../../src/raices/index';
@@ -13,6 +11,7 @@ import {Accordion} from 'flowbite-react';
 
 import functionPlot from 'function-plot';
 import MainInput from '../../components/MainInput';
+import Steps from '../../components/Steps';
 
 
 
@@ -30,13 +29,12 @@ export default function Raices(){
     const [result, setResult] = useState({});
 
 
-
     const inputSetLatex = (latex_input) => {
         router.push('/raices?method=biseccion&eq=' + latex_input.latex());
     }
 
     useEffect(() => {
-        functionPlot(result.graphOptions || {});
+        functionPlot((result as any).graphOptions || {});
     }, [steps])
 
     const resolveBisection = (mathField) => {
@@ -75,10 +73,10 @@ export default function Raices(){
 
             <div className="sm:hidden">
                 <select id="tabs" className="bg-gray-50 border border-gray-600 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
-                    <option>Profile</option>
-                    <option>Canada</option>
-                    <option>France</option>
-                    <option>Germany</option>
+                    <option>Bisección</option>
+                    <option>Newton-Raphson</option>
+                    <option>Secante</option>
+                    <option>Regla Falsa</option>
                 </select>
             </div>
             <ul className="hidden text-sm font-medium text-center text-gray-500 rounded-lg divide-x divide-gray-200 shadow sm:flex dark:divide-gray-700 dark:text-gray-400 mb-6">
@@ -96,32 +94,6 @@ export default function Raices(){
                 </li>
             </ul>
                 <MainInput latex={latex} inputSetLatex={inputSetLatex}  enter={resolveBisection} edit={inputSetLatex}></MainInput>
-                {/* <EditableMathField
-                    latex={latex}
-                    onChange={inputSetLatex}
-                    id="raices-main-input"
-                    placeholder="Escribe tu ecuación"
-                    mathquillDidMount={(mathField) => {
-                        mathField.focus()   
-                        mathField.config(
-                                {
-                                    handlers: {
-                                        enter: resolveBisection,
-                                        edit: inputSetLatex
-
-                                    }
-                                }
-                            
-                        )
-                    }}
-                    
-
-                />
-                <div>
-                    <p className="text-amber-600 text-right pb-5" >
-                        Presiona enter <ArrowLeftOnRectangleIcon className="h-6 w-6 inline"/>   para calcular
-                    </p>
-                </div> */}
                 
                 
                 <div className="text-center" style={{display: loading? 'block':'none'}}>
@@ -136,29 +108,8 @@ export default function Raices(){
 
                 {error}
                 
+                <Steps steps={steps} />
                 
-                <Accordion alwaysOpen={true} className="shadow">
-
-                {
-                    steps.map((step, index) => {
-                        return (
-                            
-                    <Accordion.Panel>
-                        <Accordion.Title className="bg-white hover:bg-gray-50">
-                         
-                         
-                         {step.titulo}
-                        </Accordion.Title>
-                        <Accordion.Content className="bg-slate-200">
-                            {step.descripcion}
-                        </Accordion.Content>
-                    </Accordion.Panel>
-                        )
-                    })
-                }
-
-                </Accordion>
-
 
             </div>
         </div>

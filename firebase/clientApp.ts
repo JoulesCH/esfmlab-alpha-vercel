@@ -1,5 +1,10 @@
 
-import firebase from "firebase/compat/app";
+// import firebase from "firebase/compat/app";
+
+import {initializeApp, getApps, getApp} from "firebase/app";
+import {getAuth, GoogleAuthProvider} from "firebase/auth";
+import {getAnalytics} from "firebase/analytics";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCZ-4PekqB9YMH66EeZ0b1fBSOsy8e5b1M",
   authDomain: "esfmlab-7a344.firebaseapp.com",
@@ -11,8 +16,15 @@ const firebaseConfig = {
 
 };
 
-if(!firebase.apps.length){
-  firebase.initializeApp(firebaseConfig);
-}
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const auth = getAuth(app);
+const analytics = getAnalytics(app);
+const provider = new GoogleAuthProvider();
 
-export default firebase;
+export {app, auth, provider}
+
+// if(!firebase.apps.length){
+//   firebase.initializeApp(firebaseConfig);
+// }
+
+// export default firebase;

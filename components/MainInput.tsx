@@ -1,4 +1,4 @@
-import { addStyles, EditableMathField } from 'react-mathquill';
+import { EditableMathField } from 'react-mathquill';
 import {
     ArrowLeftOnRectangleIcon
 } from '@heroicons/react/24/outline';

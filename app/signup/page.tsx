@@ -1,13 +1,14 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import * as firebaseui from "firebaseui";
+import "firebaseui/dist/firebaseui.css";
 // import firebase from '../../firebase/clientApp';
-import {useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
-import {auth, provider} from '../../firebase/clientApp';
+import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import {auth} from '../../firebase/clientApp';
 import { useRouter } from 'next/navigation';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { signInWithPopup } from "firebase/auth";
-
 import SessionForm from '../../components/session_form';
+
 
 // const uiConfig = {
 //     signInSuccessUrl: '/',
@@ -19,32 +20,24 @@ import SessionForm from '../../components/session_form';
 // }
 
 export default function Auth() {
+  // const router = useRouter();
+  // const [user_logged] = useAuthState(auth);
 
-  //   const router = useRouter();
-  //   const [user_logged] = useAuthState(auth);
-
-  //   if(user_logged){
-  //       router.push('/');
-  //   }
-  //   const [createUserWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+  // if(user_logged){
+  //     router.push('/');
+  // }
+  //   const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
   //   const [email, setEmail] = useState('');
   //   const [password, setPassword] = useState('');
   //   const [error_boddy, setError] = useState(<></>);
+
   //   const handleSignUp = async () => {
   //       const res  = await createUserWithEmailAndPassword(email, password);
   //       setError(<></>);
   //       setEmail('');
   //       setPassword('');
   //   };
-    
-  //   const handleGoogleSignIn = async () => {
-  //     try {
-  //         await signInWithPopup(auth, provider);
-  //     } catch (error) {
-  //         console.error(error);
-  //     }
-  // };
   //   useEffect(() => {
   //       if (error) {
   //           const errorMessage = error.message;
@@ -58,26 +51,15 @@ export default function Auth() {
   //           );
   //       }
   //   }, [error]); 
-  //   useEffect(() => {
-  //       if(user){
-  //           router.push('/');
-  //       }
-  //   }, [user]); 
 
-  //   // useEffect( () => {
-  //   //     const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth());
-  //   //     ui.start('#firebaseui-auth-container', uiConfig);
-  //   // }, []
-  //   // )
-
-    return <SessionForm signUp={false} />;
+    return SessionForm({signUp: true});
     
     // (
     //     <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
     //       <div className="max-w-md w-full space-y-8">
     //         <div>
     //           <h2 className="mt-6 text-center text-3xl font-extrabold text-amber-600">
-    //               Iniciar Sesión
+    //             Crear Cuenta
     //           </h2>
     //         </div>
     //             {error_boddy}
@@ -123,13 +105,7 @@ export default function Auth() {
     //               onClick={handleSignUp}
     //               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     //             >
-    //               Iniciar Sesión
-    //             </button>
-    //             <button
-    //               onClick={handleGoogleSignIn}
-    //               className="mt-2 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-    //             > 
-    //               Iniciar Sesión con google
+    //               Crear Cuenta
     //             </button>
     //           </div>
     //       </div>

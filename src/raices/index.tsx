@@ -27,6 +27,7 @@ function linSpace(startValue, stopValue, cardinality) {
 
 const maxIter = 100;
 export function bisection(a:GLfloat, b:GLfloat, func:Function, EPSILON:GLfloat, expression:String ):result{
+    
     try{
         
         const f_a = func(a);

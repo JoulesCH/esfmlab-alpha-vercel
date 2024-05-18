@@ -20,6 +20,7 @@
     "flowbite-react": "^0.3.7",
     "function-plot": "^1.23.2",
     "heroicons": "^2.0.13",
+    "js-cookie": "^3.0.5",
     "math-expressions": "^2.0.0-alpha52",
     "mathjax-react": "^2.0.1",
     "next": "13.1.1",
@@ -27,6 +28,7 @@
     "react": "18.2.0",
     "react-chartjs-2": "^5.1.0",
     "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-mathquill": "^1.0.2"
   },
   "devDependencies": {
