@@ -34,7 +34,8 @@ export default function Raices(){
 
 
     const inputSetLatex = (latex_input) => {
-        router.push('/raices?method=biseccion&eq=' + latex_input.latex());
+        // router.push('/raices?method=biseccion&eq=' + latex_input.latex());
+        window.history.pushState(null, 'E S F Mlab - Raices', '/raices?method=biseccion&eq=' + latex_input.latex());
     }
 
     useEffect(() => {
