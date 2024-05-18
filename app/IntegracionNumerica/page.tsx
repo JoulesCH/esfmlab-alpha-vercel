@@ -31,7 +31,7 @@ export default function(){
     }
 
     useEffect(() => {
-        functionPlot(result.graphOptions || {});
+        functionPlot((result as any).graphOptions || {});
     }, [steps])
 
     function resolveEuler(mathField){
@@ -117,7 +117,7 @@ export default function(){
 
                     {error}
                     
-                    <Steps steps={steps}> </Steps>
+                    <Steps steps={steps} />
                 </div>
             </div>
         </div>
