@@ -277,7 +277,7 @@ export default function Navbar() {
               </a>
               <a
                 href="/signup"
-                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-amber-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-amber-700"
+                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-amber-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-amber-500"
               >
                 Crear cuenta
               </a>
@@ -287,7 +287,7 @@ export default function Navbar() {
               {user_name}
               <button
                 onClick={() => {auth.signOut(); setUser(false); router.push('/login');}}
-                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-amber-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-amber-700"
+                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-amber-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-amber-500"
               >
                 Cerrar sesión
               </button>

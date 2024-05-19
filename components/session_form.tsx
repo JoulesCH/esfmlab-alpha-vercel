@@ -73,8 +73,9 @@ export default function SessionForm(Props:PropsInterface) {
     return (
         <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
           <div className="max-w-md w-full space-y-8">
+            <img src="./esfmlab-ico.png" alt="esfmlab logo"/>
             <div>
-              <h2 className="mt-6 text-center text-3xl font-extrabold text-amber-600">
+              <h2 className="mt-6 text-center text-3xl font-sans font-bold">
                   { signUp? 'Crear Cuenta'  : 'Iniciar Sesión'}
               </h2>
             </div>
@@ -119,14 +120,15 @@ export default function SessionForm(Props:PropsInterface) {
               <div>
                 <button
                   onClick={handleSign}
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-amber-600 hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                 { signUp? 'Crear Cuenta'  : 'Iniciar Sesión'}
                 </button>
                 <button
                   onClick={handleGoogleSign}
-                  className="mt-2 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="mt-2 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-slate-500 hover:bg-slate-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 > 
+                <img src="./google-ico.png" alt="google icon" className="w-6 h-6 mr-2"/>
                 { signUp? 'Unirse con Google'  : 'Iniciar Sesión con Google'}
                 </button>
               </div>
