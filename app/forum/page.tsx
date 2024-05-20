@@ -36,7 +36,7 @@ export default function page() {
                                 href="#"
                                 className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-amber-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-amber-700"
                             >
-                                Crear publicación
+                                Crear nueva publicación
                             </a>
                         </div>
                     </div>
