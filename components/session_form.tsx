@@ -73,7 +73,9 @@ export default function SessionForm(Props:PropsInterface) {
     return (
         <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
           <div className="max-w-md w-full space-y-8">
-            <img src="./esfmlab-ico.png" alt="esfmlab logo"/>
+            <div className="flex justify-center items-center">
+              <img src="./esfmlab-ico.png" alt="esfmlab logo" width="70%"/>
+            </div>
             <div>
               <h2 className="mt-6 text-center text-3xl font-sans font-bold">
                   { signUp? 'Crear Cuenta'  : 'Iniciar Sesión'}
